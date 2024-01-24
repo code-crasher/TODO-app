@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>todo  app</title>
+</head>
+<body>
+  <main>
+        <picture id="dark__mode">
+            <source media="(max-width:450px)" srcset="bg-mobile-dark.jpg">
+            <img src="bg-desktop-dark.jpg" alt="background image">
+          </picture> 
+          <picture id="light__mode">
+            <source media="(max-width:450px)" srcset="bg-mobile-light.jpg">
+            <img src="bg-desktop-light.jpg" alt="background image">
+          </picture>
+    <div class="wrapper">
+      <div class="main__content__area">
+        <div class="header flex">
+            <div><h1>TODO</h1></div>
+            <div>
+            <button id="toggle" aria-label="toggle">
+            <svg 
+               width="26" height="26"
+                aria-hidden="true" focusable="false" class="hide">
+                <path fill="var(--clr-light-100)" 
+                 fill-rule="evenodd" 
+                 d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"/>
+                </svg>
+                <svg width="26" height="26" aria-hidden="true" focusable="false" class="show">
+                <path fill="#FFF" fill-rule="evenodd" 
+                d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"/>
+            </svg>
+            <span class="sr-only">theme toggle</span>
+            </button>
+          </div>
+        </div>
+        <div class="typing__area">
+            <div class="input__task">
+             <input  type="checkbox" id="add_task-checkbox" >
+             <label for ="add_task-checkbox"></label>
+            </div>
+            <input id="add__task" type="text" placeholder="Create a new todo..." aria-label="input" aria-required="true" required>
+            <span class="msg">error</span>
+        </div>
+        <ul id="task__container"></ul>
+        <div class=" links flex">
+            <div>
+              <span id="count__el">0</span> items left
+            </div>
+        <div class="nav__links ">
+         <div class="nav--footer">
+          <a class="nav--blue show-all" href="#">All</a>
+          <a class="nav--grey active-task" href="#">Active</a>
+          <a class="nav--grey completed-task" href="#">Completed</a>
+        </div>
+        </div>
+        <div>
+            <button id="clear__btn">Clear Completed</button>
+        </div>
+        </div>
+        <div class="nav__mobile ">
+          <div class="nav--mobile--show">
+          <a class="nav--blue show-all" href="#">All</a>
+          <a class="nav--grey active-task" href="#">Active</a>
+          <a class="nav--grey completed-task" href="#">Completed</a>
+        </div>
+        </div>
+        <div class="article"><p class="article--text">Drag and drop to reoder list</p></div>
+        </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+  </body>
+</html>
